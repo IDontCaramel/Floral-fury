@@ -16,12 +16,12 @@ public class Player : MonoBehaviour
     public int score;
     public TextMeshProUGUI scoreDisplay;
 
-    public Animator hurtPanel;
-    public GameObject damPopUp;
+    //public Animator hurtPanel;
+    //public GameObject damPopUp;
 
-    public Animator cam;
+    //public Animator cam;
 
-    public GameObject losePanel;
+    //public GameObject losePanel;
     public bool isDead;
 
     public float dashBoost;
@@ -80,7 +80,7 @@ public class Player : MonoBehaviour
 
         if (health <= 0)
         {
-            losePanel.SetActive(true);
+            //losePanel.SetActive(true);
             speed = 0;
             isDead = true;
         }
@@ -92,11 +92,11 @@ public class Player : MonoBehaviour
         if (safeTime <= 0)
         {
 
-            cam.SetTrigger("shake");
+            //cam.SetTrigger("shake");
 
-            GameObject instance = Instantiate(damPopUp, transform.position, Quaternion.identity);
-            instance.GetComponentInChildren<TextMeshProUGUI>().text = "-" + dam;
-            hurtPanel.SetTrigger("hurt");
+            //GameObject instance = Instantiate(damPopUp, transform.position, Quaternion.identity);
+            //instance.GetComponentInChildren<TextMeshProUGUI>().text = "-" + dam;
+            //hurtPanel.SetTrigger("hurt");
             health -= dam;
             healthDisplay.text = health.ToString();
             safeTime = startSafeTime;
