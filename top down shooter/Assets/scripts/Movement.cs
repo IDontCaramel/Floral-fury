@@ -5,34 +5,26 @@ public class Movement : MonoBehaviour
 {
     public float speed = 8f;
     public Rigidbody2D rb;
-    public Transform Hand;
-    public KeyCode FireKey;
+    public Transform gun;
 
-    private Vector2 MoveDirection;
-    private Vector2 MousePosition;
+    Vector2 moveDirection;
+    Vector2 mousePosition;
 
     private void Update()
     {
-        float MoveX = Input.GetAxisRaw("Horizontal");
-        float MoveY = Input.GetAxisRaw("Vertical");
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
 
-        MoveDirection = new Vector2(MoveX, MoveY).normalized;
-        MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        //if (Input.GetButton(FireKey)) {
-        //    Shoot();
-        //}
+        moveDirection = new Vector2(moveX, moveY).normalized;
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = MoveDirection * speed;
+        rb.velocity = moveDirection * speed;
 
-        Vector2 AimDirection = MousePosition - rb.position;
-        float AimAngle = Mathf.Atan2(AimDirection.y, AimDirection.x) * Mathf.Rad2Deg;
-
-        // Convert AimAngle to a Quaternion
-        Quaternion rotation = Quaternion.Euler(0f, 0f, AimAngle);
-        Hand.rotation = rotation;
+        Vector2 aimDirection = mousePosition - rb.position;
+        float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+        gun.rotation = Quaternion.Euler(0f, 0f, aimAngle);
     }
 }
