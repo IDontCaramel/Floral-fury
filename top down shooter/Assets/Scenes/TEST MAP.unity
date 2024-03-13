@@ -1694,7 +1694,7 @@ GameObject:
   - component: {fileID: 190186601}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4574,66 +4574,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &492577877
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5546969821591223158, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 5546969821591223158, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 5546969821591223158, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5546969821591223158, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5546969821591223158, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5546969821591223158, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5546969821591223158, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5546969821591223158, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5546969821591223158, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5546969821591223158, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-      propertyPath: m_Name
-      value: dike trol
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1881982572}
-  m_SourcePrefab: {fileID: 100100000, guid: 605b734598a83054ab74fc161e05e734, type: 3}
 --- !u!1 &497297818
 GameObject:
   m_ObjectHideFlags: 0
@@ -18223,34 +18163,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1881982568 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-  m_PrefabInstance: {fileID: 492577877}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1881982572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881982568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57e46c377f3b14c48986f0cc62b78db5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  damage: 0
-  health: 0
-  deathEffect: {fileID: 0}
-  isPatrol: 0
-  minX: 0
-  maxX: 0
-  minY: 0
-  maxY: 0
-  scorePopUp: {fileID: 0}
-  chest: {fileID: 0}
 --- !u!1 &1903681216
 GameObject:
   m_ObjectHideFlags: 0
@@ -20652,4 +20564,3 @@ SceneRoots:
   - {fileID: 190186597}
   - {fileID: 1293609699}
   - {fileID: 1386147669}
-  - {fileID: 492577877}
