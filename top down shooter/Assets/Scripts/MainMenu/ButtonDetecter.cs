@@ -1,75 +1,113 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ButtonDetecter : MonoBehaviour
 {
-    public bool onStart = true;
+    public bool onStart = false;
     public bool onHelp = false;
     public bool onExit = false;
 
-    public SpriteRenderer ExitWorst;
-    public SpriteRenderer StartWorst;
-    public SpriteRenderer HelpWorst;
+    public GameObject Start;
+    public GameObject Help;
+    public GameObject Exit;
 
-    public Sprite onStartsprite;
-    public Sprite onHelpsprite;
-    public Sprite onExitsprite;
+    public GameObject customcursor;
+    
 
-    public Sprite StartSprite;
-    public Sprite HelpSprite;
-    public Sprite ExitSprite;
+    Vector2 MousePosition;
 
-    private void Update()
+
+    public bool usingKeyboard = false;
+
+    public double uitrek = 1.5;
+
+    public void Update()
     {
-        if (onStart)
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            StartWorst.sprite = onStartsprite;
-            HelpWorst.sprite = HelpSprite;
-            ExitWorst.sprite = ExitSprite;
-
-            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            if (usingKeyboard)
             {
-                onStart = false;
-                onHelp = true;
-                onExit = false;
+                Start.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                Help.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                Exit.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                usingKeyboard = false;
+                customcursor.SetActive(true);
+            }
+
+            else
+            {
+                onStart = true;
+                usingKeyboard = true;
+                customcursor.SetActive(false);
             }
         }
 
-        else if (onHelp)
+        if (usingKeyboard)
         {
-            StartWorst.sprite = StartSprite;
-            HelpWorst.sprite = onHelpsprite;
-            ExitWorst.sprite = ExitSprite;
-
-            if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            if (onStart)
             {
-                onStart = false;
-                onHelp = false;
-                onExit = true;
+                Start.transform.localScale = new Vector2((float)uitrek, (float)uitrek);
+                if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    Start.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                    Help.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                    Exit.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                    onStart = false;
+                    onHelp = true;
+                    onExit = false;
+                }
             }
 
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            else if (onHelp)
             {
-                onStart = true;
-                onHelp = false;
-                onExit = false;
+
+                Help.transform.localScale = new Vector2((float)uitrek, (float)uitrek);
+
+                if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+                {
+                    Start.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                    Help.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                    Exit.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                    onStart = false;
+                    onHelp = false;
+                    onExit = true;
+                }
+
+                if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    Start.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                    Help.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                    Exit.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                    onStart = true;
+                    onHelp = false;
+                    onExit = false;
+                }
+            }
+
+            else
+            {
+                Exit.transform.localScale = new Vector2((float)uitrek, (float)uitrek);
+
+                if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+                {
+                    Start.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                    Help.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                    Exit.transform.localScale = new Vector2((float)1.3, (float)1.3);
+                    onStart = false;
+                    onHelp = true;
+                    onExit = false;
+                }
             }
         }
 
         else
         {
-            StartWorst.sprite = StartSprite;
-            HelpWorst.sprite = HelpSprite;
-            ExitWorst.sprite = onExitsprite;
-
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                onStart = false;
-                onHelp = true;
-                onExit = false;
-            }
+            MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Cursor.visible = false;
+            customcursor.transform.position = MousePosition;
         }
     }
 }
