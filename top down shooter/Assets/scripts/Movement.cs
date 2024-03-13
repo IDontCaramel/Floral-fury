@@ -32,8 +32,7 @@ public class Movement : MonoBehaviour
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // crosshair naar muis beweegen
-        crosshairInstance.transform.position = mousePosition;
+        
 
         // shoot input
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(FireKey))
@@ -45,6 +44,9 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // crosshair naar muis beweegen
+        crosshairInstance.transform.position = mousePosition;
+
         // player movement
         rb.velocity = moveDirection * speed;
 
