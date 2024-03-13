@@ -1,27 +1,39 @@
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float speed = 8f;
+    public int health;
+    public int Points;
+
     public Rigidbody2D rb;
+
     public Transform gun;
     public Transform ShootPoint;
     public float bulletSpeed;
     public GameObject bulletPrefab;
+
     public GameObject CrossHair;
     private GameObject crosshairInstance;
 
-    private Animator _animation;
-    private bool IsWalking;
+    public TextMeshPro txtHealth;
+    public TextMeshPro txtPoints;
 
     public KeyCode FireKey;
 
     Vector2 moveDirection;
     Vector2 mousePosition;
     private float aimAngle;
+    private Animator _animation;
+    private bool IsWalking;
+
+    private float ExtraBulletSpeed = 1f;
 
     private void Start()
     {
+        // set animator
         _animation = GetComponent<Animator>();
         // spawn crosshair
         crosshairInstance = Instantiate(CrossHair, Vector3.zero, Quaternion.identity);
@@ -55,6 +67,13 @@ public class Movement : MonoBehaviour
         {
             ShootGun();
         }
+
+
+        // check if dood
+        if (health <= 0) 
+        {
+            Debug.Log("DEAD");
+        }
     }
 
 
@@ -83,12 +102,34 @@ public class Movement : MonoBehaviour
 
         if (bulletRb != null)
         {
+            // geeft de bullet extra speed als de speler aan het bewegen is
+            if (rb.velocity.magnitude > 0f)
+            {
+                ExtraBulletSpeed = rb.velocity.magnitude / 10 + 1;
+            }
+
             // bullet speed
-            bulletRb.velocity = ShootPoint.right * bulletSpeed;
+            bulletRb.velocity = ShootPoint.right * bulletSpeed * ExtraBulletSpeed;
         }
         else
         {
             Debug.LogWarning("Rigidbody2D component not found on the prefab. Velocity not applied.");
         }
     }
+
+    // damaged de speler
+    public void TakeDamage(int Damage)
+    {
+        health -= Damage;
+        txtHealth.text = health.ToString();
+    }
+
+    // adds to player points
+    public void AddPoints(int PointsToAdd)
+    {
+        Points += PointsToAdd;
+        txtPoints.text = health.ToString();
+    }
+    
+
 }
