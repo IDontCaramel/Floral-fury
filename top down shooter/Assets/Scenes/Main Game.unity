@@ -559,6 +559,7 @@ GameObject:
   - component: {fileID: 190186600}
   - component: {fileID: 190186599}
   - component: {fileID: 190186598}
+  - component: {fileID: 190186601}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -670,7 +671,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1143694027}
-  - {fileID: 1386147669}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &190186598
@@ -817,10 +817,31 @@ MonoBehaviour:
   rb: {fileID: 190186599}
   gun: {fileID: 1143694027}
   ShootPoint: {fileID: 1992039170}
-  bulletSpeed: 8
+  bulletSpeed: 10
   bulletPrefab: {fileID: 5677139306483728331, guid: 907ba9879b864224f9f736dd2315e714, type: 3}
   CrossHair: {fileID: 3749140148641728622, guid: c70cae1b1820d8a438be02e458034b4a, type: 3}
   FireKey: 0
+--- !u!95 &190186601
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 190186593}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84c4cd1ee9f724c4bb0834e7ead1fb9c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &197156278
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,7 +1716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 104.5, y: -41.700012}
+  m_AnchoredPosition: {x: 104.5, y: -41.69995}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &655240828
@@ -3473,7 +3494,7 @@ RectTransform:
   - {fileID: 723912900}
   - {fileID: 1720451574}
   - {fileID: 1730304240}
-  m_Father: {fileID: 190186597}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4492,7 +4513,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 370, y: -53.200012}
+  m_AnchoredPosition: {x: 370, y: -53.19995}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730304241
@@ -5318,7 +5339,7 @@ MonoBehaviour:
   m_ShowCameraFrustum: 1
   m_IgnoreTimeScale: 0
   m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
+  m_UpdateMethod: 0
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
     m_Style: 1
@@ -5881,3 +5902,4 @@ SceneRoots:
   - {fileID: 78013826}
   - {fileID: 190186597}
   - {fileID: 1293609699}
+  - {fileID: 1386147669}
