@@ -11,6 +11,9 @@ public class Movement : MonoBehaviour
     public GameObject CrossHair;
     private GameObject crosshairInstance;
 
+    private Animator _animation;
+    private bool IsWalking;
+
     public KeyCode FireKey;
 
     Vector2 moveDirection;
@@ -19,6 +22,7 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
+        _animation = GetComponent<Animator>();
         // spawn crosshair
         crosshairInstance = Instantiate(CrossHair, Vector3.zero, Quaternion.identity);
     }
@@ -28,6 +32,18 @@ public class Movement : MonoBehaviour
         // movement input
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
+
+        if (rb.velocity.x > 0 || rb.velocity.y > 0 || rb.velocity.x < 0 || rb.velocity.y < 0)
+        {
+            IsWalking = true;
+        }
+
+        else
+        {
+            IsWalking = false;
+        }
+
+        _animation.SetBool("IsWalking", IsWalking);
 
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
