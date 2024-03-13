@@ -43,6 +43,14 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        // checks of de speler in range en er geen objecten tussen zitten
+        if (!target)
+        {
+            Debug.DrawRay(transform.position, target.transform.position - transform.position, Color.red);
+        }
+
+
+
         // checked of het target bestaat
         if (target == null)
         {

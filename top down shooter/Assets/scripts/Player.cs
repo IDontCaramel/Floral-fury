@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     public TextMeshPro txtHealth;
     public TextMeshPro txtPoints;
 
+    public GameObject DeathEffect;
+
     public KeyCode FireKey;
 
     Vector2 moveDirection;
@@ -72,7 +74,10 @@ public class Player : MonoBehaviour
         // check if dood
         if (health <= 0) 
         {
+            health = 0;
             Debug.Log("DEAD");
+            Instantiate(DeathEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
