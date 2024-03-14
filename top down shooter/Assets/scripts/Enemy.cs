@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public float speed;
     private Transform target;
+    //private GameObject target2;
 
     public int damage;
     public int health;
@@ -59,14 +60,25 @@ public class Enemy : MonoBehaviour
 
 
         // checks of de speler in range en er geen objecten tussen zitten
-        if (target)
+        if (target != null && player != null)
         {
             Vector2 directionToPlayer = player.transform.position - transform.position;
+            Debug.DrawRay(transform.position, directionToPlayer, Color.cyan);
+
             if (directionToPlayer.magnitude <= visionRange)
             {
                 RaycastHit2D ray = Physics2D.Raycast(transform.position, directionToPlayer, visionRange, CanSee);
 
-                if (ray.collider != null && ray.collider.CompareTag("Player"))
+                if (ray.collider != null)
+                {
+                    Debug.Log("Ray hit: " + ray.collider.gameObject.name);
+                }
+                else
+                {
+                    Debug.Log("Ray did not hit anything.");
+                }
+
+                if (ray.collider != null)// && ray.collider.gameObject == player)
                 {
                     Debug.Log("player found");
                     isPatrol = false;
@@ -74,17 +86,21 @@ public class Enemy : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log(ray.collider);
                     Debug.Log("player not found");
                     isPatrol = true;
                     Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
                 }
+
             }
             else
             {
                 Debug.Log("player exits idk");
-                isPatrol = false;
+                isPatrol = true;
             }
+        }
+        else
+        {
+            Debug.Log("Target or player is null");
         }
 
 
