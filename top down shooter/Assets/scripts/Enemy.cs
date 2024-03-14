@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     public int health;
     public GameObject deathEffect;
 
-    public int Points;
+    public int PointsWorth;
 
     public bool isPatrol;
     public float minX;
@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour
     public float visionRange;
     private GameObject player;
 
+    public LayerMask CanSee;
+
     private void Start()
     {
 
@@ -39,7 +41,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Player GameObject not found! Make sure it is tagged with 'Player'.");
+            Debug.LogError("Player GameObject not found");
         }
 
         patrolTarget = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
@@ -47,40 +49,59 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        // checked of het target bestaat
+        if (target == null)
+        {
+            Debug.Log("target not found");
+            return;
+        }
+
+
+
         // checks of de speler in range en er geen objecten tussen zitten
-        if (!target)
+        if (target)
         {
             Vector2 directionToPlayer = player.transform.position - transform.position;
             if (directionToPlayer.magnitude <= visionRange)
             {
-                RaycastHit2D ray = Physics2D.Raycast(transform.position, directionToPlayer, visionRange);
+                RaycastHit2D ray = Physics2D.Raycast(transform.position, directionToPlayer, visionRange, CanSee);
 
                 if (ray.collider != null && ray.collider.CompareTag("Player"))
                 {
+                    Debug.Log("player found");
                     isPatrol = false;
                     Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
-                    transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
                 }
                 else
                 {
+                    Debug.Log(ray.collider);
+                    Debug.Log("player not found");
                     isPatrol = true;
                     Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
                 }
             }
             else
             {
+                Debug.Log("player exits idk");
                 isPatrol = false;
             }
         }
 
 
-
-        // checked of het target bestaat
-        if (target == null)
+        // death animatie en punten optellen
+        if (health <= 0)
         {
-            return; 
+            GameObject instance = Instantiate(scorePopUp, transform.position, Quaternion.identity);
+            target.GetComponent<Player>().Points += PointsWorth;
+            instance.GetComponentInChildren<TextMeshProUGUI>().text = "+" + PointsWorth;
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
+    }
 
+
+    private void FixedUpdate()
+    {
         // patrol functie 
         if (isPatrol)
         {
@@ -93,22 +114,9 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-        }
-
-
-        // death animatie en punten optellen
-        if (health <= 0)
-        {
-            GameObject instance = Instantiate(scorePopUp, transform.position, Quaternion.identity);
-            target.GetComponent<Player>().AddPoints(Points);
-            instance.GetComponentInChildren<TextMeshProUGUI>().text = "+" + Points;
-            Instantiate(deathEffect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
     }
-
-
 
 
     // damage doen naar de speler
