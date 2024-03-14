@@ -126,13 +126,13 @@ public class Player : MonoBehaviour
     public void TakeDamage(int Damage)
     {
         health -= Damage;
-        txtHealth.text = health.ToString();
+        //txtHealth.text = health.ToString();
     }
 
     // adds to player points
     public void AddPoints(int PointsToAdd)
     {
-        //Points += PointsToAdd;
+        Points += PointsToAdd;
         //txtPoints.text = health.ToString();
     }
     
