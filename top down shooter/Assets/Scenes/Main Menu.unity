@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 23429302}
   - component: {fileID: 23429303}
   - component: {fileID: 23429304}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 324428953}
   - component: {fileID: 324428955}
   - component: {fileID: 324428954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rareBoom (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 433777814}
   - component: {fileID: 433777816}
   - component: {fileID: 433777815}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: vetzak (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ GameObject:
   - component: {fileID: 450829195}
   - component: {fileID: 450829197}
   - component: {fileID: 450829196}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: vetzak (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,7 +765,7 @@ GameObject:
   - component: {fileID: 573085661}
   - component: {fileID: 573085662}
   - component: {fileID: 573085663}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MediumEnemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -866,7 +866,7 @@ GameObject:
   - component: {fileID: 713885742}
   - component: {fileID: 713885744}
   - component: {fileID: 713885743}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: highfiveguy (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +972,7 @@ GameObject:
   - component: {fileID: 717954511}
   - component: {fileID: 717954512}
   - component: {fileID: 717954513}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SlowEnemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1075,7 +1075,7 @@ GameObject:
   - component: {fileID: 803087229}
   - component: {fileID: 803087231}
   - component: {fileID: 803087230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GareTrol (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1265,7 +1265,7 @@ GameObject:
   - component: {fileID: 839772619}
   - component: {fileID: 839772621}
   - component: {fileID: 839772620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GareTrol (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1371,7 +1371,7 @@ GameObject:
   - component: {fileID: 881090746}
   - component: {fileID: 881090747}
   - component: {fileID: 881090748}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1638,7 +1638,7 @@ GameObject:
   - component: {fileID: 911055849}
   - component: {fileID: 911055850}
   - component: {fileID: 911055851}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: highfiveguy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1742,7 +1742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 976585194}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Allenemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1778,7 +1778,7 @@ GameObject:
   - component: {fileID: 994169535}
   - component: {fileID: 994169536}
   - component: {fileID: 994169537}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rareBoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1884,7 +1884,7 @@ GameObject:
   - component: {fileID: 1037906789}
   - component: {fileID: 1037906791}
   - component: {fileID: 1037906790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GareTrol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1990,7 +1990,7 @@ GameObject:
   - component: {fileID: 1057051952}
   - component: {fileID: 1057051954}
   - component: {fileID: 1057051953}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drol (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2096,7 +2096,7 @@ GameObject:
   - component: {fileID: 1195501842}
   - component: {fileID: 1195501844}
   - component: {fileID: 1195501843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: vetzak (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2286,7 +2286,7 @@ GameObject:
   - component: {fileID: 1286333153}
   - component: {fileID: 1286333155}
   - component: {fileID: 1286333154}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drol (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2516,7 +2516,7 @@ GameObject:
   - component: {fileID: 1350585967}
   - component: {fileID: 1350585969}
   - component: {fileID: 1350585968}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drol (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2653,7 +2653,7 @@ GameObject:
   - component: {fileID: 1392429043}
   - component: {fileID: 1392429042}
   - component: {fileID: 1392429044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: vetzak
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2759,7 +2759,7 @@ GameObject:
   - component: {fileID: 1516961106}
   - component: {fileID: 1516961108}
   - component: {fileID: 1516961107}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drol (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2865,7 +2865,7 @@ GameObject:
   - component: {fileID: 1529731499}
   - component: {fileID: 1529731500}
   - component: {fileID: 1529731501}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FastEnemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2966,7 +2966,7 @@ GameObject:
   - component: {fileID: 1594634301}
   - component: {fileID: 1594634303}
   - component: {fileID: 1594634302}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: drol (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3072,7 +3072,7 @@ GameObject:
   - component: {fileID: 1623360232}
   - component: {fileID: 1623360234}
   - component: {fileID: 1623360233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: plant (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3838,7 +3838,7 @@ GameObject:
   - component: {fileID: 1913039324}
   - component: {fileID: 1913039326}
   - component: {fileID: 1913039325}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GareTrol (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
