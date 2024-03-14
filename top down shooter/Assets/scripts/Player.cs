@@ -132,8 +132,8 @@ public class Player : MonoBehaviour
     // adds to player points
     public void AddPoints(int PointsToAdd)
     {
-        Points += PointsToAdd;
-        txtPoints.text = health.ToString();
+        //Points += PointsToAdd;
+        //txtPoints.text = health.ToString();
     }
     
 

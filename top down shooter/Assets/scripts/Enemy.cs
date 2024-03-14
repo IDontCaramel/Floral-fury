@@ -24,11 +24,15 @@ public class Enemy : MonoBehaviour
 
     public GameObject scorePopUp;
 
+
+    public float visionRange;
+    private GameObject player;
+
     private void Start()
     {
 
         // vind de speler en zet die als targer
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             target = player.transform;
@@ -46,7 +50,27 @@ public class Enemy : MonoBehaviour
         // checks of de speler in range en er geen objecten tussen zitten
         if (!target)
         {
-            Debug.DrawRay(transform.position, target.transform.position - transform.position, Color.red);
+            Vector2 directionToPlayer = player.transform.position - transform.position;
+            if (directionToPlayer.magnitude <= visionRange)
+            {
+                RaycastHit2D ray = Physics2D.Raycast(transform.position, directionToPlayer, visionRange);
+
+                if (ray.collider != null && ray.collider.CompareTag("Player"))
+                {
+                    isPatrol = false;
+                    Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
+                    transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+                }
+                else
+                {
+                    isPatrol = true;
+                    Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
+                }
+            }
+            else
+            {
+                isPatrol = false;
+            }
         }
 
 
@@ -57,7 +81,7 @@ public class Enemy : MonoBehaviour
             return; 
         }
 
-        // patrol functie idk of we die gaan gebruiken
+        // patrol functie 
         if (isPatrol)
         {
             transform.position = Vector2.MoveTowards(transform.position, patrolTarget, speed * Time.deltaTime);
@@ -69,7 +93,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
 
 
@@ -83,6 +107,8 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+
 
 
     // damage doen naar de speler

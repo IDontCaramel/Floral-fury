@@ -3119,6 +3119,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8906147003901859658, guid: 605b734598a83054ab74fc161e05e734, type: 3}
+      propertyPath: maxX
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8906147003901859658, guid: 605b734598a83054ab74fc161e05e734, type: 3}
+      propertyPath: maxY
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8906147003901859658, guid: 605b734598a83054ab74fc161e05e734, type: 3}
+      propertyPath: minX
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8906147003901859658, guid: 605b734598a83054ab74fc161e05e734, type: 3}
+      propertyPath: minY
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8906147003901859658, guid: 605b734598a83054ab74fc161e05e734, type: 3}
+      propertyPath: visionRange
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5546969821591223158, guid: 605b734598a83054ab74fc161e05e734, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.94
@@ -3163,10 +3183,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: dike trol
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5823623697713600380, guid: 605b734598a83054ab74fc161e05e734, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 404567039}
   m_SourcePrefab: {fileID: 100100000, guid: 605b734598a83054ab74fc161e05e734, type: 3}
 --- !u!1 &395714110
 GameObject:
@@ -3420,6 +3444,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &404567032 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
+  m_PrefabInstance: {fileID: 381511055}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &404567039
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404567032}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &414161283
 GameObject:
   m_ObjectHideFlags: 0
