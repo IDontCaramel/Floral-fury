@@ -24,11 +24,11 @@ public class Enemy : MonoBehaviour
 
     public GameObject scorePopUp;
 
+    public GameObject HealthPack;
 
     public float visionRange;
     private GameObject player;
 
-    public LayerMask CanSee;
 
     private void Start()
     {
@@ -94,6 +94,12 @@ public class Enemy : MonoBehaviour
         // death animatie en punten optellen
         if (health <= 0)
         {
+            int randChance = Random.Range(0, 20);
+            if (randChance == 1)
+            {
+                Instantiate(HealthPack, transform.position, Quaternion.identity);
+            }
+
             GameObject instance = Instantiate(scorePopUp, transform.position, Quaternion.identity);
             target.GetComponent<Player>().Points += PointsWorth;
             instance.GetComponentInChildren<TextMeshProUGUI>().text = "+" + PointsWorth;
@@ -133,7 +139,8 @@ public class Enemy : MonoBehaviour
         // damage doen naar de speler
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Player>().TakeDamage(damage);
+            Debug.Log("player hit");
+            collision.gameObject.GetComponent<Player>().health--;
         }
     }
 }

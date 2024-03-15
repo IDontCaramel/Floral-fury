@@ -18,12 +18,14 @@ public class Player : MonoBehaviour
     public GameObject CrossHair;
     private GameObject crosshairInstance;
 
-    public TextMeshPro txtHealth;
-    public TextMeshPro txtPoints;
+    public TextMeshProUGUI txtHealth;
+    public TextMeshProUGUI txtPoints;
 
     public GameObject DeathEffect;
 
     public KeyCode FireKey;
+
+    public bool HealthOverride;
 
     Vector2 moveDirection;
     Vector2 mousePosition;
@@ -82,6 +84,21 @@ public class Player : MonoBehaviour
             Instantiate(DeathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+
+
+        // hud updaten
+        txtPoints.text = Points.ToString();
+        txtHealth.text = health.ToString();
+
+
+        if (!HealthOverride)
+        {
+            if (health > 10)
+            {
+                health = 10;
+            }
+        }
+
     }
 
 
@@ -125,21 +142,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    // damaged de speler
-    public void TakeDamage(int Damage)
-    {
-        health -= Damage;
-        //txtHealth.text = health.ToString();
-    }
-
-    // adds to player points
-    public void AddPoints(int PointsToAdd)
-    {
-        Points += PointsToAdd;
-        Debug.Log("+ " + PointsToAdd.ToString());
-        txtPoints.text = health.ToString();
-    }
-
+ 
 
 
 }
