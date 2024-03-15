@@ -10,14 +10,14 @@ using UnityEngine.UIElements;
 public class EnemySpawnerScript : MonoBehaviour
 {
     public Transform[] AllSpawners;
-    public int numberOfEnemiesAlive;
+    public int numberOfEnemiesAlive = 0;
     public int EnemiesToSpawn;
     public int wave = 0;
     public GameObject[] enemies;
-    List<GameObject> AmountOfEnemies = new List<GameObject>();
+    /*    public List<GameObject> AmountOfEnemies = new List<GameObject>();*/
 
     public float timeBetweenSpawn;
-    public float timer;
+    public float timer = 0;
     public bool canSpawn = true;
 
     public GameObject AllenemiesParent;
@@ -35,49 +35,45 @@ public class EnemySpawnerScript : MonoBehaviour
     private void Update()
     {
         WaveManager();
-        numberOfEnemiesAlive = AmountOfEnemies.Count;
+        /*numberOfEnemiesAlive = AmountOfEnemies.Count;*/
     }
 
     public void WaveManager()
     {
-        if (numberOfEnemiesAlive > 0)
+        for (int i = 0; i < EnemiesToSpawn; i++)
         {
-            Debug.Log("Enemies are not dead");
-            return;
-        }
-
-        else
-        {
-            
-            for (int i = 0; i < EnemiesToSpawn; i++)
+            if (canSpawn)
             {
-                Debug.Log("hij komt hier");
-                if (!canSpawn)
-                {
-                    timer += Time.deltaTime;
-                    if (timer > timeBetweenSpawn)
-                    {
-                        Debug.Log("Spawn = true");
-                        canSpawn = true;
-                        timer = 0;
-                    }
-                }
-                if (canSpawn)
-                {
-                    int RandomEnemiesIndex = Random.Range(0, enemies.Length);
-                    Debug.Log(RandomEnemiesIndex);
-                    int RandomSpawnerIndex = Random.Range(1, AllSpawners.Length); // Choose a random index from SpawnerPositions
-                    Vector3 randomSpawnerPosition = AllSpawners[RandomSpawnerIndex].position;
+                Spawner();
+                canSpawn = false;
+            }
 
-                    GameObject clonedEnemy = Instantiate(enemies[RandomEnemiesIndex], randomSpawnerPosition, transform.rotation);
-                    clonedEnemy.transform.parent = AllenemiesParent.transform;
-                    AmountOfEnemies.Add(clonedEnemy);
-                    canSpawn = false;
+            else if (!canSpawn)
+            {
+                timer += Time.deltaTime;
+                if (timer > timeBetweenSpawn)
+                {
+                    canSpawn = true;
+                    timer = 0;
+                    EnemiesToSpawn--;
                 }
             }
         }
     }
-        
+
+    public void Spawner()
+    {
+        int RandomEnemiesIndex = Random.Range(0, enemies.Length);
+        Debug.Log(RandomEnemiesIndex);
+        int RandomSpawnerIndex = Random.Range(1, AllSpawners.Length); // Choose a random index from SpawnerPositions
+        Vector3 randomSpawnerPosition = AllSpawners[RandomSpawnerIndex].position;
+
+        GameObject clonedEnemy = Instantiate(enemies[RandomEnemiesIndex], randomSpawnerPosition, transform.rotation);
+        clonedEnemy.transform.parent = AllenemiesParent.transform;
+        numberOfEnemiesAlive += 1;
+        return;
+    }
+
     public void GoThroughSpawners()
     {
         foreach (Transform child in AllSpawners)

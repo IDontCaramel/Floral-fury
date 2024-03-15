@@ -12573,7 +12573,7 @@ MonoBehaviour:
   - {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
   - {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
   - {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-  timeBetweenSpawn: 0.5
+  timeBetweenSpawn: 10
   timer: 0
   canSpawn: 1
   AllenemiesParent: {fileID: 748138117}
