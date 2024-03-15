@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1308576153648446202}
   - component: {fileID: -5823623697713600380}
   - component: {fileID: -8906147003901859658}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: dike trol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,10 +288,14 @@ MonoBehaviour:
   damage: 0
   health: 1
   deathEffect: {fileID: 5429169109122593495, guid: 092e9707d9958874eaaae8be11bc7210, type: 3}
-  Points: 0
+  PointsWorth: 0
   isPatrol: 0
-  minX: 0
-  maxX: 0
-  minY: 0
-  maxY: 0
+  minX: -4
+  maxX: 74
+  minY: -22
+  maxY: 48
   scorePopUp: {fileID: 2227365554244047701, guid: e6e24b4939687cc469d70e0ef0502cb5, type: 3}
+  visionRange: 10
+  CanSee:
+    serializedVersion: 2
+    m_Bits: 0

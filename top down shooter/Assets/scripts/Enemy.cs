@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
 {
     public float speed;
     private Transform target;
-    //private GameObject target2;
 
     public int damage;
     public int health;
@@ -60,14 +59,14 @@ public class Enemy : MonoBehaviour
 
 
         // checks of de speler in range en er geen objecten tussen zitten
-        if (target != null && player != null)
+        if (player != null)
         {
             Vector2 directionToPlayer = player.transform.position - transform.position;
             Debug.DrawRay(transform.position, directionToPlayer, Color.cyan);
 
             if (directionToPlayer.magnitude <= visionRange)
             {
-                RaycastHit2D ray = Physics2D.Raycast(transform.position, directionToPlayer, visionRange, CanSee);
+                RaycastHit2D ray = Physics2D.Raycast(transform.position, directionToPlayer, visionRange);
 
                 if (ray.collider != null)
                 {
@@ -78,7 +77,7 @@ public class Enemy : MonoBehaviour
                     Debug.Log("Ray did not hit anything.");
                 }
 
-                if (ray.collider != null)// && ray.collider.gameObject == player)
+                if (ray.collider != null && ray.collider.gameObject == player)
                 {
                     Debug.Log("player found");
                     isPatrol = false;
@@ -135,22 +134,18 @@ public class Enemy : MonoBehaviour
     }
 
 
-    // damage doen naar de speler
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            other.GetComponent<Player>().TakeDamage(damage);
-        }
-    }
-
-
-    // damage van bullets
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // damage van bullets
         if (collision.gameObject.CompareTag("Bullet"))
         {
             health--;
+        }
+
+        // damage doen naar de speler
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<Player>().TakeDamage(damage);
         }
     }
 }
