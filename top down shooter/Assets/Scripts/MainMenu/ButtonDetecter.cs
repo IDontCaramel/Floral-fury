@@ -11,6 +11,8 @@ public class ButtonDetecter : MonoBehaviour
     public bool onHelp = false;
     public bool onExit = false;
 
+    public Scene[] allMaps;
+
     public GameObject Start;
     public GameObject Help;
     public GameObject Exit;
@@ -52,7 +54,7 @@ public class ButtonDetecter : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    SceneManager.LoadScene("Map 1");
+                    RandomMap();
                 }
 
                 Start.transform.localScale = new Vector2((float)uitrek, (float)uitrek);
@@ -95,6 +97,10 @@ public class ButtonDetecter : MonoBehaviour
 
             else
             {
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    Application.Quit();
+                }
                 Exit.transform.localScale = new Vector2((float)uitrek, (float)uitrek);
 
                 if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
@@ -115,5 +121,11 @@ public class ButtonDetecter : MonoBehaviour
             Cursor.visible = false;
             customcursor.transform.position = MousePosition;
         }
+    }
+
+    public void RandomMap()
+    {
+        int randomMapIndex = Random.Range(1, allMaps.Length);
+        SceneManager.LoadScene("Map " + randomMapIndex.ToString());
     }
 }
