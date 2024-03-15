@@ -6363,6 +6363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 748138118}
+  - component: {fileID: 748138119}
   m_Layer: 0
   m_Name: Allenemies
   m_TagString: Untagged
@@ -6385,6 +6386,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &748138119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748138117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65a6d80a2114b5a4d8a562dd72becc6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmountOfEnemiesAlive: 0
 --- !u!1 &749319161
 GameObject:
   m_ObjectHideFlags: 0
@@ -12564,18 +12578,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296590cef4a45fb4f934b0c088ac51ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllSpawners: []
   numberOfEnemiesAlive: 0
+  enemiesalive: {fileID: 748138119}
   EnemiesToSpawn: 5
+  enemiestoSpawnMultiplier: 2
   wave: 0
   enemies:
   - {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
   - {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
   - {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
   - {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-  timeBetweenSpawn: 10
-  timer: 0
-  canSpawn: 1
+  maxenemiesthatCanSpawn: 15
+  timeBetweenSpawn: 3
+  TimeBetweenWave: 30
   AllenemiesParent: {fileID: 748138117}
 --- !u!4 &1466149323
 Transform:

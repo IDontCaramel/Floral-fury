@@ -9,16 +9,24 @@ using UnityEngine.UIElements;
 
 public class EnemySpawnerScript : MonoBehaviour
 {
-    public Transform[] AllSpawners;
-    public int numberOfEnemiesAlive = 0;
+    private Transform[] AllSpawners;
+    public int numberOfEnemiesAlive;
+    public EnemyCounter enemiesalive;
     public int EnemiesToSpawn;
+    private int EnemiesThatSpawnedLastTIme = 3;
+    public int enemiestoSpawnMultiplier;
     public int wave = 0;
     public GameObject[] enemies;
-    /*    public List<GameObject> AmountOfEnemies = new List<GameObject>();*/
+
+    public int maxenemiesthatCanSpawn;
 
     public float timeBetweenSpawn;
-    public float timer = 0;
-    public bool canSpawn = true;
+    private float timer = 0;
+    private bool canSpawn = true;
+
+    public float TimeBetweenWave;
+    private float waveTimer;
+    private bool NextWave = true;
 
     public GameObject AllenemiesParent;
 
@@ -34,11 +42,31 @@ public class EnemySpawnerScript : MonoBehaviour
 
     private void Update()
     {
-        WaveManager();
-        /*numberOfEnemiesAlive = AmountOfEnemies.Count;*/
+        numberOfEnemiesAlive = enemiesalive.AmountOfEnemiesAlive;
+        EnemySpawner();
     }
 
-    public void WaveManager()
+    private void FixedUpdate()
+    {
+        if (NextWave)
+        {
+            waveManager();
+            NextWave = false;
+        }
+
+        else
+        {
+            waveTimer += Time.deltaTime;
+            if (waveTimer > TimeBetweenWave)
+            {
+                NextWave = true;
+                waveTimer = 0;
+            }
+        }
+    }
+
+
+    public void EnemySpawner()
     {
         for (int i = 0; i < EnemiesToSpawn; i++)
         {
@@ -61,10 +89,25 @@ public class EnemySpawnerScript : MonoBehaviour
         }
     }
 
+    public void waveManager()
+    {
+        wave += 1;
+        if(EnemiesThatSpawnedLastTIme < maxenemiesthatCanSpawn)
+        {
+            EnemiesToSpawn = EnemiesThatSpawnedLastTIme + enemiestoSpawnMultiplier;
+        }
+        else
+        {
+            EnemiesToSpawn = maxenemiesthatCanSpawn;
+        }
+        EnemiesThatSpawnedLastTIme = EnemiesToSpawn;
+        Debug.Log(EnemiesToSpawn);
+
+    }
+
     public void Spawner()
     {
         int RandomEnemiesIndex = Random.Range(0, enemies.Length);
-        Debug.Log(RandomEnemiesIndex);
         int RandomSpawnerIndex = Random.Range(1, AllSpawners.Length); // Choose a random index from SpawnerPositions
         Vector3 randomSpawnerPosition = AllSpawners[RandomSpawnerIndex].position;
 
@@ -78,7 +121,6 @@ public class EnemySpawnerScript : MonoBehaviour
     {
         foreach (Transform child in AllSpawners)
         {
-            Debug.Log(AllSpawners.Length);
             if (child == transform)
                 continue;
             child.gameObject.name = "Spawner_" + NumbOfChild.ToString();
