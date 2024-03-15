@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f7d85954c42bf4c861f13f7f89f772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
+  speed: 6
   health: 10
   Points: 0
   rb: {fileID: 5780816880537069803}
@@ -153,6 +153,7 @@ MonoBehaviour:
   txtPoints: {fileID: 0}
   DeathEffect: {fileID: 5429169109122593495, guid: 092e9707d9958874eaaae8be11bc7210, type: 3}
   FireKey: 113
+  HealthOverride: 0
 --- !u!50 &5780816880537069803
 Rigidbody2D:
   serializedVersion: 4
