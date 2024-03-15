@@ -12585,9 +12585,11 @@ MonoBehaviour:
   wave: 0
   enemies:
   - {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-  - {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-  - {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
-  - {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
+  - {fileID: 7318293454973986928, guid: 509e0346924ae204ab9cb28f85eec4de, type: 3}
+  - {fileID: 7318293454973986928, guid: 4fc970e1da0ee2544b4a5cfffe2c1662, type: 3}
+  - {fileID: 7318293454973986928, guid: caef4d7a1cf68844a8cae9c342358646, type: 3}
+  - {fileID: 7318293454973986928, guid: 1d4393f641afd89478a40e2160c970b1, type: 3}
+  - {fileID: 7318293454973986928, guid: 957d0cf12dfb6e342a03fc5ecc1a97b3, type: 3}
   maxenemiesthatCanSpawn: 15
   timeBetweenSpawn: 3
   TimeBetweenWave: 30
