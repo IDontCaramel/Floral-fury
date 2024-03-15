@@ -553,7 +553,7 @@ GameObject:
   m_Component:
   - component: {fileID: 78013826}
   - component: {fileID: 78013825}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: barier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9328,7 +9328,7 @@ GameObject:
   - component: {fileID: 1164552070}
   - component: {fileID: 1164552072}
   - component: {fileID: 1164552071}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: barier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9794,7 +9794,7 @@ GameObject:
   - component: {fileID: 1226454629}
   - component: {fileID: 1226454631}
   - component: {fileID: 1226454630}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: barier (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14686,7 +14686,7 @@ GameObject:
   - component: {fileID: 1745036314}
   - component: {fileID: 1745036316}
   - component: {fileID: 1745036315}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: barier (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16291,7 +16291,7 @@ GameObject:
   - component: {fileID: 1918125611}
   - component: {fileID: 1918125613}
   - component: {fileID: 1918125612}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: barier (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
