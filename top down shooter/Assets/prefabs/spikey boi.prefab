@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9153271656202166827}
   - component: {fileID: 476348051237372556}
   - component: {fileID: 1700886342650101375}
+  - component: {fileID: 1132071866793468908}
   m_Layer: 0
   m_Name: spikey boi
   m_TagString: Untagged
@@ -296,3 +297,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9438f1e7eb34efc449f88ac01a5ca452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pushForce: 5
+--- !u!95 &1132071866793468908
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057682126627066988}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0b1cbc26d59cff841916aa09e9e4a92a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
