@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonDetecter : MonoBehaviour
 {
@@ -49,6 +50,11 @@ public class ButtonDetecter : MonoBehaviour
         {
             if (onStart)
             {
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    SceneManager.LoadScene("Map 1");
+                }
+
                 Start.transform.localScale = new Vector2((float)uitrek, (float)uitrek);
                 if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
                 {
