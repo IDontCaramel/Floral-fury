@@ -67,6 +67,7 @@ public class Enemy : MonoBehaviour
             {
                 RaycastHit2D ray = Physics2D.Raycast(transform.position, directionToPlayer, visionRange);
 
+
                 if (ray.collider != null && ray.collider.gameObject == player)
                 {
                     isPatrol = false;
@@ -94,7 +95,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             GameObject instance = Instantiate(scorePopUp, transform.position, Quaternion.identity);
-            target.GetComponent<Player>().AddPoints(PointsWorth);
+            target.GetComponent<Player>().Points += PointsWorth;
             instance.GetComponentInChildren<TextMeshProUGUI>().text = "+" + PointsWorth;
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
