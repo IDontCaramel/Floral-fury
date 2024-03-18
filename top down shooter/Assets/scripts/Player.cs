@@ -86,11 +86,7 @@ public class Player : MonoBehaviour
         }
 
 
-        // hud updaten
-        txtPoints.text = Points.ToString();
-        txtHealth.text = health.ToString();
-
-
+        // health niet hoger dan 10
         if (!HealthOverride)
         {
             if (health > 10)
@@ -142,7 +138,17 @@ public class Player : MonoBehaviour
         }
     }
 
- 
 
+    public void HealthManager(int dmgDealt)
+    {
+        health = health - dmgDealt;
+        txtHealth.text = health.ToString();
+    }
+
+    public void PointManager(int PointsToAdd)
+    {
+        Points += PointsToAdd;
+        txtPoints.text = Points.ToString();
+    }
 
 }

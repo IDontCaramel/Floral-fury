@@ -1,8 +1,9 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ToMainMenu : MonoBehaviour
 {
-    public void ChangeScene()
+    public void OnButtonClick()
     {
         SceneManager.LoadScene("Main Menu");
     }

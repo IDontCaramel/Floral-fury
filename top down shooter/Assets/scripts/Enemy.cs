@@ -140,7 +140,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("player hit");
-            collision.gameObject.GetComponent<Player>().health--;
+            collision.gameObject.GetComponent<Player>().HealthManager(damage);
         }
     }
 }

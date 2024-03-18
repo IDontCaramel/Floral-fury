@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 8814802804745068794}
   - component: {fileID: 8591202448722446433}
   - component: {fileID: 4350243360188692872}
+  - component: {fileID: 8300514693936388583}
   m_Layer: 0
   m_Name: btnRestart
   m_TagString: Untagged
@@ -194,7 +195,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8591202448722446433}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8300514693936388583}
+        m_TargetAssemblyTypeName: RestartGame, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8300514693936388583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2689601646578142764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c367cc9bec6ff94386bccba66d321da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3490403841697549471
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +497,7 @@ GameObject:
   - component: {fileID: 417073784014117337}
   - component: {fileID: 8493849743423587705}
   - component: {fileID: 1494335274602046876}
+  - component: {fileID: 6277819766138041803}
   m_Layer: 0
   m_Name: btnExit
   m_TagString: Untagged
@@ -580,18 +606,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: ccd981f8a26b1e44b96ebb314ecf711b, type: 3}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 6277819766138041803}
+        m_TargetAssemblyTypeName: ToMainMenu, Assembly-CSharp
+        m_MethodName: OnButtonClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: ChangeScene
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6277819766138041803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4575169942368955425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd981f8a26b1e44b96ebb314ecf711b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4579067109741311951
 GameObject:
   m_ObjectHideFlags: 0
