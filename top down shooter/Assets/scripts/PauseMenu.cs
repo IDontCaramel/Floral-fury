@@ -9,6 +9,9 @@ public class PauseMenu : MonoBehaviour
     public GameObject Menu;
     public GameObject cursor;
 
+    public GameObject BuyMenu;
+    public bool buyVisible = false;
+
 
     private void Start()
     {
@@ -29,6 +32,24 @@ public class PauseMenu : MonoBehaviour
             {
                 Menu.SetActive(false);
                 Time.timeScale = 1;
+            }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            if (buyVisible == true)
+            {
+
+                BuyMenu.SetActive(false);
+                buyVisible = false;
+            }
+
+            else
+            {
+                Cursor.visible = true;
+                BuyMenu.SetActive(true);
+                buyVisible = true;
             }
         }
 

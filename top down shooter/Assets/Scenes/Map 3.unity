@@ -4488,6 +4488,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1651807722297806712, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
+      propertyPath: HitEffect
+      value: 
+      objectReference: {fileID: 5429169109122593495, guid: 8152e83328e34524c85cf1ef7c991497, type: 3}
+    - target: {fileID: 1651807722297806712, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
       propertyPath: txtHealth
       value: 
       objectReference: {fileID: 655240828}
@@ -15107,7 +15111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 56.1, y: -53.399994}
+  m_AnchoredPosition: {x: 56.099976, y: -53.400024}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1720451575

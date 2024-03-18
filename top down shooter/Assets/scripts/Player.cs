@@ -55,7 +55,6 @@ public class Player : MonoBehaviour
     {
         Cursor.visible = false;
 
-
         // movement input
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");

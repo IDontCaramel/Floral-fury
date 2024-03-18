@@ -143,6 +143,7 @@ MonoBehaviour:
   speed: 6
   health: 10
   Points: 0
+  BuyMenu: {fileID: 4089349607634146922, guid: 4409d2685743b1a4595e51438842b10c, type: 3}
   rb: {fileID: 5780816880537069803}
   gun: {fileID: 2278054139091156311}
   ShootPoint: {fileID: 4501803749582518402}
@@ -152,6 +153,7 @@ MonoBehaviour:
   txtHealth: {fileID: 0}
   txtPoints: {fileID: 0}
   DeathEffect: {fileID: 5429169109122593495, guid: 092e9707d9958874eaaae8be11bc7210, type: 3}
+  HitEffect: {fileID: 0}
   FireKey: 113
   HealthOverride: 0
 --- !u!50 &5780816880537069803
