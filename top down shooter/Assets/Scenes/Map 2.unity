@@ -18024,10 +18024,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 915908671912061365, guid: 1c62d10a81dd6ba4db252deaa4914f15, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1929647004}
     - target: {fileID: 4579067109741311951, guid: 1c62d10a81dd6ba4db252deaa4914f15, type: 3}
       propertyPath: m_Name
       value: menu manager
       objectReference: {fileID: 0}
+    - target: {fileID: 5430202410244225590, guid: 1c62d10a81dd6ba4db252deaa4914f15, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1929647004}
     - target: {fileID: 6215723673894781449, guid: 1c62d10a81dd6ba4db252deaa4914f15, type: 3}
       propertyPath: m_LocalPosition.x
       value: 194.1697

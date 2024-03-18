@@ -8,9 +8,9 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject Menu;
     public GameObject cursor;
+    
 
     public GameObject BuyMenu;
-    public bool buyVisible = false;
 
 
     private void Start()
@@ -21,7 +21,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
         Cursor.visible = false;
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) && !BuyMenu.activeSelf)
         {
             if (!Menu.activeSelf)
             {
@@ -36,20 +36,19 @@ public class PauseMenu : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) && !Menu.activeSelf) 
         {
-            if (buyVisible == true)
+            if (BuyMenu.activeSelf)
             {
-
+                Time.timeScale = 1;
                 BuyMenu.SetActive(false);
-                buyVisible = false;
             }
 
             else
             {
+                Time.timeScale = 0;
                 Cursor.visible = true;
                 BuyMenu.SetActive(true);
-                buyVisible = true;
             }
         }
 
