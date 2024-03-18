@@ -101,7 +101,7 @@ public class Enemy : MonoBehaviour
             }
 
             GameObject instance = Instantiate(scorePopUp, transform.position, Quaternion.identity);
-            target.GetComponent<Player>().Points += PointsWorth;
+            target.GetComponent<Player>().PointManager(PointsWorth);
             instance.GetComponentInChildren<TextMeshProUGUI>().text = "+" + PointsWorth;
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
