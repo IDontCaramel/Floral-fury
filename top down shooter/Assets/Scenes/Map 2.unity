@@ -9872,6 +9872,14 @@ PrefabInstance:
       value: Player (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1651807722297806712, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
+      propertyPath: FireKey
+      value: 107
+      objectReference: {fileID: 0}
+    - target: {fileID: 1651807722297806712, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
+      propertyPath: HitEffect
+      value: 
+      objectReference: {fileID: 5429169109122593495, guid: 8152e83328e34524c85cf1ef7c991497, type: 3}
+    - target: {fileID: 1651807722297806712, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
       propertyPath: txtHealth
       value: 
       objectReference: {fileID: 655240828}

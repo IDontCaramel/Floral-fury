@@ -1,6 +1,9 @@
+using System.Collections;
 using TMPro;
+using Unity.Properties;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.U2D;
 
 public class Player : MonoBehaviour
 {
@@ -15,6 +18,8 @@ public class Player : MonoBehaviour
     public float bulletSpeed;
     public GameObject bulletPrefab;
 
+    private SpriteRenderer PlayerSprite;
+
     public GameObject CrossHair;
     private GameObject crosshairInstance;
 
@@ -22,6 +27,7 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI txtPoints;
 
     public GameObject DeathEffect;
+    public GameObject HitEffect;
 
     public KeyCode FireKey;
 
@@ -41,6 +47,8 @@ public class Player : MonoBehaviour
         _animation = GetComponent<Animator>();
         // spawn crosshair
         crosshairInstance = Instantiate(CrossHair, Vector3.zero, Quaternion.identity);
+
+        PlayerSprite = GetComponent<SpriteRenderer>();
     }
 
     private void Update()
@@ -143,6 +151,21 @@ public class Player : MonoBehaviour
     {
         health = health - dmgDealt;
         txtHealth.text = health.ToString();
+        Instantiate(HitEffect, transform.position, Quaternion.identity);
+        StartCoroutine(PlayerHit(0.1f));
+    }
+
+    public IEnumerator PlayerHit(float Duration)
+    {
+        float TimeElapsed = 0f;
+        while (TimeElapsed < Duration)
+        {
+            PlayerSprite.color = Color.red;
+            TimeElapsed += Time.deltaTime;
+            yield return 0;
+        }
+
+        PlayerSprite.color = Color.white;
     }
 
     public void PointManager(int PointsToAdd)

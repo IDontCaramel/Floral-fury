@@ -5112,7 +5112,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 204.9, y: -41.69995}
+  m_AnchoredPosition: {x: 204.90002, y: -41.69995}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &655240828
@@ -7156,6 +7156,10 @@ PrefabInstance:
       value: Player (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1651807722297806712, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
+      propertyPath: HitEffect
+      value: 
+      objectReference: {fileID: 5429169109122593495, guid: 8152e83328e34524c85cf1ef7c991497, type: 3}
+    - target: {fileID: 1651807722297806712, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
       propertyPath: txtHealth
       value: 
       objectReference: {fileID: 655240828}
@@ -7163,6 +7167,10 @@ PrefabInstance:
       propertyPath: txtPoints
       value: 
       objectReference: {fileID: 723912901}
+    - target: {fileID: 1651807722297806712, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2317750518503677498, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 36.14
@@ -7202,6 +7210,18 @@ PrefabInstance:
     - target: {fileID: 2317750518503677498, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107638517424651081, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107638517424651081, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107638517424651081, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12581,7 +12601,7 @@ MonoBehaviour:
   - {fileID: 7318293454973986928, guid: caef4d7a1cf68844a8cae9c342358646, type: 3}
   - {fileID: 7318293454973986928, guid: 1d4393f641afd89478a40e2160c970b1, type: 3}
   - {fileID: 7318293454973986928, guid: 957d0cf12dfb6e342a03fc5ecc1a97b3, type: 3}
-  maxenemiesthatCanSpawn: 15
+  maxenemiesthatCanSpawn: 50
   timeBetweenSpawn: 3
   TimeBetweenWave: 30
   AllenemiesParent: {fileID: 748138117}
@@ -14609,7 +14629,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 55.4, y: -56.7}
+  m_AnchoredPosition: {x: 55.400024, y: -56.700012}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1720451575
@@ -14768,7 +14788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 306.3, y: -55.6}
+  m_AnchoredPosition: {x: 306.3, y: -55.599976}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730304241

@@ -7,6 +7,7 @@ TagManager:
   - Bullet
   - StartButton
   - ExitButton
+  - Enemy
   layers:
   - Default
   - TransparentFX
