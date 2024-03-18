@@ -8,9 +8,8 @@ TagManager:
   - StartButton
   - ExitButton
   - Enemy
-  - Item1
-  - Item2
-  - Item3
+  - spikeboy
+  - spawner
   layers:
   - Default
   - TransparentFX

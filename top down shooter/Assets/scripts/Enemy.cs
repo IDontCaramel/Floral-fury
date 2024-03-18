@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour
     public float visionRange;
     private GameObject player;
 
+    
+
 
     private void Start()
     {
@@ -109,6 +111,9 @@ public class Enemy : MonoBehaviour
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+
+
+
     }
 
 
@@ -147,7 +152,7 @@ public class Enemy : MonoBehaviour
             collision.gameObject.GetComponent<Player>().HealthManager(damage, "-");
         }
 
-        if (collision.gameObject.CompareTag("spikeboy"))
+        if (collision.gameObject.CompareTag("spikeboy") || collision.gameObject.CompareTag("spawner"))
         {
             patrolTarget = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
         }

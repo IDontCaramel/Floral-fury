@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
 
     public KeyCode FireKey;
 
+    public KeyCode RotLeft;
+    public KeyCode RotRight;
+
     public bool HealthOverride;
 
     Vector2 moveDirection;
@@ -108,6 +111,13 @@ public class Player : MonoBehaviour
                 health = 10;
             }
         }
+
+
+        while (Input.GetKey(RotLeft))
+        {
+            gun.Rotate(Vector3.forward * 1f * Time.deltaTime);
+        }
+
 
     }
 
