@@ -285,10 +285,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  damage: 0
-  health: 1
+  damage: 5
+  health: 8
   deathEffect: {fileID: 5429169109122593495, guid: 092e9707d9958874eaaae8be11bc7210, type: 3}
-  PointsWorth: 0
+  PointsWorth: 8
   isPatrol: 0
   minX: -4
   maxX: 74
