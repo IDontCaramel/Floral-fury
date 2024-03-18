@@ -49,6 +49,9 @@ public class Player : MonoBehaviour
         crosshairInstance = Instantiate(CrossHair, Vector3.zero, Quaternion.identity);
 
         PlayerSprite = GetComponent<SpriteRenderer>();
+
+        txtHealth.text = health.ToString();
+        txtPoints.text = Points.ToString();
     }
 
     private void Update()
@@ -150,12 +153,20 @@ public class Player : MonoBehaviour
     }
 
 
-    public void HealthManager(int dmgDealt)
+    public void HealthManager(int dmgDealt, string AddRem)
     {
-        health = health - dmgDealt;
+        if (AddRem == "+")
+        {
+            health += dmgDealt;
+        }
+        else if (AddRem == "-")
+        {
+            health -= dmgDealt;
+            Instantiate(HitEffect, transform.position, Quaternion.identity);
+            StartCoroutine(PlayerHit(0.1f));
+        }
         txtHealth.text = health.ToString();
-        Instantiate(HitEffect, transform.position, Quaternion.identity);
-        StartCoroutine(PlayerHit(0.1f));
+
     }
 
     public IEnumerator PlayerHit(float Duration)

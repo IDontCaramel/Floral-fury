@@ -94,12 +94,15 @@ public class Enemy : MonoBehaviour
         // death animatie en punten optellen
         if (health <= 0)
         {
-            int randChance = Random.Range(0, 20);
+
+            // kans om een heart te droppen
+            int randChance = Random.Range(0, 10);
             if (randChance == 1)
             {
                 Instantiate(HealthPack, transform.position, Quaternion.identity);
             }
 
+            // regelt de points en de display
             GameObject instance = Instantiate(scorePopUp, transform.position, Quaternion.identity);
             target.GetComponent<Player>().PointManager(PointsWorth);
             instance.GetComponentInChildren<TextMeshProUGUI>().text = "+" + PointsWorth;
@@ -128,6 +131,7 @@ public class Enemy : MonoBehaviour
     }
 
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // damage van bullets
@@ -140,7 +144,12 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Debug.Log("player hit");
-            collision.gameObject.GetComponent<Player>().HealthManager(damage);
+            collision.gameObject.GetComponent<Player>().HealthManager(damage, "-");
+        }
+
+        if (collision.gameObject.CompareTag("spikeboy"))
+        {
+            patrolTarget = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
         }
     }
 }
