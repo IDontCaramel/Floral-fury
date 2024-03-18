@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
+        // animaties aan/uit zetten
         if (rb.velocity.x > 0 || rb.velocity.y > 0 || rb.velocity.x < 0 || rb.velocity.y < 0)
         {
             IsWalking = true;
@@ -72,6 +73,8 @@ public class Player : MonoBehaviour
 
         _animation.SetBool("IsWalking", IsWalking);
 
+
+        // sets positions
         moveDirection = new Vector2(moveX, moveY).normalized;
         mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
@@ -88,6 +91,7 @@ public class Player : MonoBehaviour
         if (health <= 0) 
         {
             health = 0;
+            txtHealth.text = health.ToString();
             Debug.Log("DEAD");
             Instantiate(DeathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
