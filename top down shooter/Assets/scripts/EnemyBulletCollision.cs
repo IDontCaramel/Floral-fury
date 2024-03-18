@@ -9,7 +9,7 @@ public class EnemyBulletCollision : MonoBehaviour
         Destroy(gameObject);
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Player>().health--;
+            collision.gameObject.GetComponent<Player>().HealthManager(1, "-");
         }
     }
 }

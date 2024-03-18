@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1132071866793468908}
   m_Layer: 0
   m_Name: spikey boi
-  m_TagString: Untagged
+  m_TagString: spikeboy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,6 +298,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 5
+  damage: 5
 --- !u!95 &1132071866793468908
 Animator:
   serializedVersion: 5

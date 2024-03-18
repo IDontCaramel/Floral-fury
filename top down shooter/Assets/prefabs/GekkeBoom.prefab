@@ -162,7 +162,7 @@ MonoBehaviour:
   maxY: 48
   scorePopUp: {fileID: 2227365554244047701, guid: e6e24b4939687cc469d70e0ef0502cb5, type: 3}
   HealthPack: {fileID: 3097355179708648454, guid: bb0912606da89854f8b34001a9fdc520, type: 3}
-  visionRange: 10
+  visionRange: 20
 --- !u!70 &6300022335116784442
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

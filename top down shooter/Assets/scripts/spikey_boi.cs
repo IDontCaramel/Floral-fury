@@ -6,12 +6,14 @@ using UnityEngine;
 public class spikey_boi : MonoBehaviour
 {
     public float pushForce = 5f; // Adjust this value to control the force applied
+    public int damage = 5;
 
     private bool timeout = false;
     private float timer;
 
     private void Update()
     {
+        //hit timout
         if (timeout)
         {
             timer += Time.deltaTime;
@@ -28,6 +30,8 @@ public class spikey_boi : MonoBehaviour
         }
     }
 
+
+    // duwt de player weg van de spike (werkt heel raar)
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Vector2 directionToObject = collision.transform.position - transform.position;
@@ -44,8 +48,8 @@ public class spikey_boi : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player") && !timeout)
         {
-            collision.gameObject.GetComponent<Player>().health -= 5;
-            
+            collision.gameObject.GetComponent<Player>().HealthManager(damage, "-");
+
             timeout = true;
         }
     }

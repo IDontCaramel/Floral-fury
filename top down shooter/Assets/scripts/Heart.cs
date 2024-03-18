@@ -11,7 +11,8 @@ public class Heart : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Player>().health += Worth;
+            // voegt health toe aan de speler
+            collision.gameObject.GetComponent<Player>().HealthManager(Worth, "+");
             Destroy(gameObject);
         }
     }
