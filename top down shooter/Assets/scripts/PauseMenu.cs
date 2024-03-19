@@ -20,11 +20,11 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        Cursor.visible = false;
         if (Input.GetKeyUp(KeyCode.Escape) && !BuyMenu.activeSelf)
         {
             if (!Menu.activeSelf)
             {
+                cursor.SetActive(true);
                 Menu.SetActive(true);
                 Time.timeScale = 0;
             }
@@ -32,6 +32,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Menu.SetActive(false);
                 Time.timeScale = 1;
+                cursor.SetActive(false);
             }
         }
 
@@ -42,12 +43,13 @@ public class PauseMenu : MonoBehaviour
             {
                 Time.timeScale = 1;
                 BuyMenu.SetActive(false);
+                cursor.SetActive(false);
             }
 
             else
             {
                 Time.timeScale = 0;
-                Cursor.visible = true;
+                cursor.SetActive(true);
                 BuyMenu.SetActive(true);
             }
         }

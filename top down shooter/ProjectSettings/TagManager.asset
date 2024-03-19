@@ -10,6 +10,10 @@ TagManager:
   - Enemy
   - spikeboy
   - spawner
+  - Item1
+  - Item2
+  - Item3
+  - Cursor
   layers:
   - Default
   - TransparentFX
