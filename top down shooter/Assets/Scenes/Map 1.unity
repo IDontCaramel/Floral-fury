@@ -14010,6 +14010,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2665725906937078663, guid: 1c62d10a81dd6ba4db252deaa4914f15, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1929647004}
     - target: {fileID: 2742811763616914922, guid: 1c62d10a81dd6ba4db252deaa4914f15, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -14020,6 +14024,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2839806727382490788, guid: 1c62d10a81dd6ba4db252deaa4914f15, type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3211128917578395059, guid: 1c62d10a81dd6ba4db252deaa4914f15, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4411615652058804361, guid: 1c62d10a81dd6ba4db252deaa4914f15, type: 3}

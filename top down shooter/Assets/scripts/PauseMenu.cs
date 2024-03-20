@@ -8,19 +8,27 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject Menu;
     public GameObject cursor;
-    
+
+    public bool isInBuyMenu = false;
 
     public GameObject BuyMenu;
+    public GameObject DeathMenu;
 
 
     private void Start()
     {
     }
 
+    public void Dead()
+    {
+        DeathMenu.SetActive(true);
+        cursor.SetActive(true);
+    }
+
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape) && !BuyMenu.activeSelf)
+        if (Input.GetKeyUp(KeyCode.Escape))
         {
             if (!Menu.activeSelf)
             {
@@ -36,21 +44,19 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-
-        if (Input.GetKeyDown(KeyCode.B) && !Menu.activeSelf) 
+        if (Input.GetKeyUp(KeyCode.B))
         {
-            if (BuyMenu.activeSelf)
+            if (!BuyMenu.activeSelf)
             {
-                Time.timeScale = 1;
-                BuyMenu.SetActive(false);
-                cursor.SetActive(false);
-            }
-
-            else
-            {
-                Time.timeScale = 0;
                 cursor.SetActive(true);
                 BuyMenu.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else
+            {
+                BuyMenu.SetActive(false);
+                Time.timeScale = 1;
+                cursor.SetActive(false);
             }
         }
 
