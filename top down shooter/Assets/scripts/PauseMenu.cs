@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Escape) && !BuyMenu.activeSelf)
         {
             if (!Menu.activeSelf)
             {
@@ -44,7 +44,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.B))
+        if (Input.GetKeyUp(KeyCode.B) && !Menu.activeSelf)
         {
             if (!BuyMenu.activeSelf)
             {

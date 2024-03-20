@@ -1261,7 +1261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &763893438
 Transform:
   m_ObjectHideFlags: 0
@@ -3189,22 +3189,18 @@ MonoBehaviour:
   m_text: 'The goal of the game is to achieve the highest possible score by shooting
     down enemies.
 
-    
 
-    You can move the player using WASD or the arrow keys,
-    and aim your gun by moving your mouse. If you don''t have a mouse, no worries!
-    You can also move the gun using the (KEYS).
+    You can move the player using WASD or the arrow keys, and
+    aim your gun by moving your mouse.
 
-    
 
-    Once you''ve collected
-    enough points, you can visit the shop by pressing B. Here, you can buy upgrades
-    for your player.
+    Once you''ve collected enough points,
+    you can visit the shop by pressing B. Here, you can buy upgrades for your player.
+    You navigate in the shop with A and D (if its not working press tab)
 
-    
 
-    If you need a quick break, you can also press ESC
-    to pause the game.'
+    If
+    you need a quick break, you can also press ESC to pause the game.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bb8b89495d6e74747a53cd805e9948a5, type: 2}
   m_sharedMaterial: {fileID: 7501906459765030719, guid: bb8b89495d6e74747a53cd805e9948a5, type: 2}
@@ -3231,8 +3227,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41
-  m_fontSizeBase: 41
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

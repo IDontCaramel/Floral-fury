@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.23529412}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.4627451}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -716,6 +716,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Menu: {fileID: 6324750880475065297}
   cursor: {fileID: 4411615652058804361}
+  isInBuyMenu: 0
   BuyMenu: {fileID: 979406569002391196, guid: 53c2a44100349c74396927b36c114ddc, type: 3}
   DeathMenu: {fileID: 3211128917578395059}
 --- !u!1 &4613871309422936629
@@ -1126,6 +1127,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3466208994133107782, guid: 53c2a44100349c74396927b36c114ddc, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4817718131699014778, guid: 53c2a44100349c74396927b36c114ddc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 38.736504
@@ -1177,6 +1182,14 @@ PrefabInstance:
     - target: {fileID: 5552906307059793355, guid: 53c2a44100349c74396927b36c114ddc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742839537000083419, guid: 53c2a44100349c74396927b36c114ddc, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6778449620410103973, guid: 53c2a44100349c74396927b36c114ddc, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6959238642202699454, guid: 53c2a44100349c74396927b36c114ddc, type: 3}
       propertyPath: m_Layer
@@ -1327,7 +1340,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Points: 0
+  Sold1: {fileID: 0}
+  Sold2: {fileID: 0}
+  Sold3: {fileID: 0}
   playerScript: {fileID: 1651807722297806712, guid: 45c4643ea3eaaf447a0b0e1e1dd30eff, type: 3}
+  enemyScript: {fileID: 0}
+  enemyScript2: {fileID: 0}
+  enemyScript3: {fileID: 0}
+  enemyScript4: {fileID: 0}
+  enemyScript5: {fileID: 0}
+  enemyScript6: {fileID: 0}
   item1: {fileID: 2742811763616914922}
   item2: {fileID: 7984996370692852546}
   item3: {fileID: 4865752000633150970}

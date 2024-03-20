@@ -66,6 +66,10 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+
+        txtHealth.text = health.ToString();
+        txtPoints.text = Points.ToString();
+
         Cursor.visible = false;
 
         // movement input
