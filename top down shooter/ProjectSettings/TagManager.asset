@@ -15,6 +15,7 @@ TagManager:
   - Item3
   - Cursor
   - HelpButton
+  - Barrier
   layers:
   - Default
   - TransparentFX

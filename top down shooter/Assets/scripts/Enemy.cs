@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 
 public class Enemy : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class Enemy : MonoBehaviour
     public GameObject HealthPack;
 
     public float visionRange;
+
+    public int dmg = 1;
+
     private GameObject player;
 
     
@@ -142,7 +146,7 @@ public class Enemy : MonoBehaviour
         // damage van bullets
         if (collision.gameObject.CompareTag("Bullet"))
         {
-            health--;
+            health -= dmg;
         }
 
         // damage doen naar de speler

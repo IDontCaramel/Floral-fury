@@ -37,6 +37,9 @@ public class Player : MonoBehaviour
     public bool HealthOverride;
 
     public GameObject DeathScreen;
+    public GameObject cursor;
+
+    public bool TrippleShot;
 
     Vector2 moveDirection;
     Vector2 mousePosition;
@@ -103,17 +106,22 @@ public class Player : MonoBehaviour
             txtHealth.text = health.ToString();
             Debug.Log("DEAD");
             Instantiate(DeathEffect, transform.position, Quaternion.identity);
+            DeathScreen.SetActive(true);
+            cursor.SetActive(true);
             Destroy(gameObject);
         }
 
 
         // health niet hoger dan 10
-        if (!HealthOverride)
+        if (health > 10 && !HealthOverride)
         {
-            if (health > 10)
-            {
-                health = 10;
-            }
+            health = 10;
+            txtHealth.text = health.ToString();
+        }
+        else if (health > 15 && HealthOverride)
+        {
+            health = 15;
+            txtHealth.text = health.ToString();
         }
 
 
@@ -152,6 +160,24 @@ public class Player : MonoBehaviour
     {
         // spawn bullet op shootpoint
         GameObject spawnedBullet = Instantiate(bulletPrefab, ShootPoint.position, Quaternion.identity);
+
+        if (TrippleShot)
+        {
+            GameObject spawnedBulletTS1 = Instantiate(bulletPrefab, ShootPoint.position, Quaternion.identity);
+            GameObject spawnedBulletTS2 = Instantiate(bulletPrefab, ShootPoint.position, Quaternion.identity);
+
+            Rigidbody2D bulletRbTS1 = spawnedBulletTS1.GetComponent<Rigidbody2D>();
+            Rigidbody2D bulletRbTS2 = spawnedBulletTS2.GetComponent<Rigidbody2D>();
+
+            // Calculate the left and right deviations
+            Vector2 leftDeviation = Quaternion.AngleAxis(-30, Vector3.forward) * ShootPoint.right;
+            Vector2 rightDeviation = Quaternion.AngleAxis(30, Vector3.forward) * ShootPoint.right;
+
+            // Apply velocities with deviation
+            bulletRbTS1.velocity = leftDeviation * bulletSpeed * ExtraBulletSpeed;
+            bulletRbTS2.velocity = rightDeviation * bulletSpeed * ExtraBulletSpeed;
+        }
+
 
         // rigidbody for bullet
         Rigidbody2D bulletRb = spawnedBullet.GetComponent<Rigidbody2D>();

@@ -15,4 +15,6 @@ public class BulletCollision : MonoBehaviour
             Instantiate(HitEffect, transform.position, Quaternion.identity);
         }
     }
+
+    
 }
