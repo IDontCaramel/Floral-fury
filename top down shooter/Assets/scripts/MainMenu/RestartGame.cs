@@ -11,5 +11,7 @@ public class RestartGame : MonoBehaviour
         Scene Current_Scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(Current_Scene.name);
         Time.timeScale = 1;
+        
     }
+
 }

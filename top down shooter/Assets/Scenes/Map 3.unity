@@ -2365,6 +2365,14 @@ PrefabInstance:
       propertyPath: BuyMenu
       value: 
       objectReference: {fileID: 1014670843}
+    - target: {fileID: 2546105243275167318, guid: 1c62d10a81dd6ba4db252deaa4914f15, type: 3}
+      propertyPath: PlayerScript
+      value: 
+      objectReference: {fileID: 752452813}
+    - target: {fileID: 2546105243275167318, guid: 1c62d10a81dd6ba4db252deaa4914f15, type: 3}
+      propertyPath: enemySpawner
+      value: 
+      objectReference: {fileID: 1466149322}
     - target: {fileID: 2665725906937078663, guid: 1c62d10a81dd6ba4db252deaa4914f15, type: 3}
       propertyPath: m_Camera
       value: 
@@ -2636,7 +2644,7 @@ Transform:
   m_GameObject: {fileID: 375121501}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 38.132553, y: 8.218532, z: -0.20190707}
+  m_LocalPosition: {x: 38.132553, y: 10.98, z: -0.20190707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13009,7 +13017,7 @@ MonoBehaviour:
   numberOfEnemiesAlive: 0
   enemiesalive: {fileID: 748138119}
   EnemiesToSpawn: 5
-  enemiestoSpawnMultiplier: 2
+  enemiestoSpawnMultiplier: 4
   wave: 0
   enemies:
   - {fileID: 7318293454973986928, guid: 605b734598a83054ab74fc161e05e734, type: 3}
@@ -13020,7 +13028,7 @@ MonoBehaviour:
   - {fileID: 7318293454973986928, guid: 957d0cf12dfb6e342a03fc5ecc1a97b3, type: 3}
   maxenemiesthatCanSpawn: 50
   timeBetweenSpawn: 3
-  TimeBetweenWave: 30
+  TimeBetweenWave: 15
   AllenemiesParent: {fileID: 748138117}
 --- !u!4 &1466149323
 Transform:
