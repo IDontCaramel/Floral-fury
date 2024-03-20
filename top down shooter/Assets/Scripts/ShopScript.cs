@@ -18,7 +18,17 @@ public class ShopScript : MonoBehaviour
     private int Item2Price = 3500;
     private int Item3Price = 1500;
 
+    public GameObject Sold1;
+    public GameObject Sold2;
+    public GameObject Sold3;
+
     public Player playerScript;
+    public Enemy enemyScript;
+    public Enemy enemyScript2;
+    public Enemy enemyScript3;
+    public Enemy enemyScript4;
+    public Enemy enemyScript5;
+    public Enemy enemyScript6;
 
     public GameObject item1;
     public GameObject item2;
@@ -26,7 +36,7 @@ public class ShopScript : MonoBehaviour
 
     private void Update()
     {
-        Points = playerScript.Points;
+        
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
@@ -49,10 +59,10 @@ public class ShopScript : MonoBehaviour
 
             if (onItem1)
             {
-                if(Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.Return))
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
                 {
                     Item1();
-                 
+
                 }
 
                 item1.transform.localScale = bigScale;
@@ -118,9 +128,10 @@ public class ShopScript : MonoBehaviour
         }
     }
 
-    public bool CheckIfEnough(int Money, int ItemPrice)
+    public bool CheckIfEnough(int ItemPrice)
     {
-        if (Money >= ItemPrice)
+
+        if (playerScript.Points >= ItemPrice)
         {
             return true;
         }
@@ -130,10 +141,17 @@ public class ShopScript : MonoBehaviour
 
     public void Item1()
     {
-        if (CheckIfEnough(Points, Item1Price))
+        if (CheckIfEnough(Item1Price))
         {
-            Points = Points - Item1Price;
-            // hier moet de upgrade toegepast worden
+            playerScript.Points = playerScript.Points - Item1Price;
+            enemyScript.dmg = 2;
+            enemyScript2.dmg = 2;
+            enemyScript3.dmg = 2;
+            enemyScript4.dmg = 2;
+            enemyScript5.dmg = 2;
+            enemyScript6.dmg = 2;
+
+            Sold1.SetActive(true);
         }
 
         else
@@ -144,10 +162,12 @@ public class ShopScript : MonoBehaviour
 
     public void Item2()
     {
-        if (CheckIfEnough(Points, Item2Price))
+        if (CheckIfEnough(Item2Price))
         {
-            Points = Points - Item2Price;
-            // hier moet de upgrade toegepast worden
+            playerScript.Points = playerScript.Points - Item2Price;
+            playerScript.TrippleShot = true;
+
+            Sold2.SetActive(true);
         }
 
         else
@@ -158,10 +178,13 @@ public class ShopScript : MonoBehaviour
 
     public void Item3()
     {
-        if (CheckIfEnough(Points, Item3Price))
+        if (CheckIfEnough(Item3Price))
         {
-            Points = Points - Item3Price;
-            // hier moet de upgrade toegepast worden
+            playerScript.Points = playerScript.Points - Item3Price;
+            playerScript.HealthOverride = true;
+            playerScript.HealthManager(15, "+");
+
+            Sold3.SetActive(true);
         }
 
         else
