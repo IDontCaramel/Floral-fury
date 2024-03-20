@@ -6,6 +6,7 @@ using UnityEngine;
 public class CursorScript : MonoBehaviour
 {
     public ButtonDetecter detecter;
+    public GameObject HelpMenu;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -14,6 +15,11 @@ public class CursorScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && collision.CompareTag("StartButton"))
         {
             detecter.RandomMap();
+        }
+
+        if (Input.GetMouseButtonDown(0) && collision.CompareTag("HelpButton"))
+        {
+            HelpMenu.SetActive(true);
         }
 
         if (Input.GetMouseButtonDown(0) && collision.CompareTag("ExitButton"))

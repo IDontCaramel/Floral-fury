@@ -22,6 +22,7 @@ public class ButtonDetecter : MonoBehaviour
 
     Vector2 MousePosition;
 
+    public GameObject HelpMenu;
 
     public bool usingKeyboard = false;
 
@@ -73,6 +74,11 @@ public class ButtonDetecter : MonoBehaviour
             {
 
                 Help.transform.localScale = new Vector2((float)uitrek, (float)uitrek);
+
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    HelpMenu.SetActive(true);
+                }
 
                 if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
                 {

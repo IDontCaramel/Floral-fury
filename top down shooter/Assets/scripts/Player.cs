@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
 
     public bool HealthOverride;
 
+    public GameObject DeathScreen;
+
     Vector2 moveDirection;
     Vector2 mousePosition;
     private float aimAngle;
@@ -43,6 +45,8 @@ public class Player : MonoBehaviour
     private bool IsWalking;
 
     private float ExtraBulletSpeed = 1f;
+
+
 
     private void Start()
     {
@@ -113,11 +117,18 @@ public class Player : MonoBehaviour
         }
 
 
-        while (Input.GetKey(RotLeft))
+        if (Input.GetKey(RotLeft))
         {
-            gun.Rotate(Vector3.forward * 1f * Time.deltaTime);
+            gun.Rotate(Vector3.forward * 500f * Time.deltaTime);
         }
-
+        else if (Input.GetKey(RotRight)) 
+        {
+            gun.Rotate(Vector3.forward * -500f * Time.deltaTime); 
+        }
+        else
+        {
+            gun.rotation = Quaternion.Euler(0f, 0f, aimAngle);
+        }
 
     }
 
@@ -134,7 +145,7 @@ public class Player : MonoBehaviour
         Vector2 aimDirection = (mousePosition - rb.position).normalized;
         aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
 
-        gun.rotation = Quaternion.Euler(0f, 0f, aimAngle);
+        //gun.rotation = Quaternion.Euler(0f, 0f, aimAngle);
     }
 
     public void ShootGun()

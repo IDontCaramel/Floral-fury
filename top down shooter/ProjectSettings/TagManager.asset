@@ -14,6 +14,7 @@ TagManager:
   - Item2
   - Item3
   - Cursor
+  - HelpButton
   layers:
   - Default
   - TransparentFX
