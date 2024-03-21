@@ -1,7 +1,7 @@
 
 # floral fury
 
-Welcome to Floral Fury, an exciting top-down shooter game created for a school project! This game was a collaborative effort between myself and ([Cas](http://portfolio.casvld.nl/)). Despite our tight deadline of two weeks, we made a great game, though there might be a few bugs lurking about.
+Welcome to Floral Fury, an exciting top-down shooter game created for a school project! This game was a collaborative effort between myself and [Cas](http://portfolio.casvld.nl/). Despite our tight deadline of two weeks, we made a great game, though there might be a few bugs lurking about.
 
 # Gameplay
 
