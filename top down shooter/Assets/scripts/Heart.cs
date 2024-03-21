@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Heart : MonoBehaviour
 {
-    public int Worth = 4;
+    public int Worth = 1;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
