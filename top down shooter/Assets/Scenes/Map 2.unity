@@ -12788,7 +12788,7 @@ MonoBehaviour:
   - {fileID: 7318293454973986928, guid: caef4d7a1cf68844a8cae9c342358646, type: 3}
   - {fileID: 7318293454973986928, guid: 1d4393f641afd89478a40e2160c970b1, type: 3}
   - {fileID: 7318293454973986928, guid: 957d0cf12dfb6e342a03fc5ecc1a97b3, type: 3}
-  maxenemiesthatCanSpawn: 50
+  maxenemiesthatCanSpawn: 75
   timeBetweenSpawn: 3
   TimeBetweenWave: 15
   AllenemiesParent: {fileID: 748138117}
