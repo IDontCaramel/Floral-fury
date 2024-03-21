@@ -1869,7 +1869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   detecter: {fileID: 1343264636}
-  HelpMenu: {fileID: 0}
+  HelpMenu: {fileID: 763893437}
 --- !u!212 &897411715
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4392,7 +4392,7 @@ GameObject:
   - component: {fileID: 1670921113}
   m_Layer: 6
   m_Name: Exit (1)
-  m_TagString: Untagged
+  m_TagString: ExitButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

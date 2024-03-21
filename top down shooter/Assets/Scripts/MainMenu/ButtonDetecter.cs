@@ -77,7 +77,7 @@ public class ButtonDetecter : MonoBehaviour
 
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    HelpMenu.SetActive(true);
+                    HelpMenuOpener();
                 }
 
                 if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
@@ -105,7 +105,7 @@ public class ButtonDetecter : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
-                    Application.Quit();
+                    QuitGame();
                 }
                 Exit.transform.localScale = new Vector2((float)uitrek, (float)uitrek);
 
@@ -133,5 +133,15 @@ public class ButtonDetecter : MonoBehaviour
     {
         int randomMapIndex = Random.Range(1, allMaps.Length);
         SceneManager.LoadScene("Map " + randomMapIndex.ToString());
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void HelpMenuOpener()
+    {
+        HelpMenu.SetActive(true);
     }
 }

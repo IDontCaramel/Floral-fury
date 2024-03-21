@@ -108,6 +108,7 @@ public class EnemySpawnerScript : MonoBehaviour
 
         else
         {
+            TimeBetweenWave = 5;
             return;
         }
 
@@ -118,7 +119,7 @@ public class EnemySpawnerScript : MonoBehaviour
     public void Spawner()
     {
         int RandomEnemiesIndex = Random.Range(0, enemies.Length);
-        int RandomSpawnerIndex = Random.Range(1, AllSpawners.Length); // Choose a random index from SpawnerPositions
+        int RandomSpawnerIndex = Random.Range(1, AllSpawners.Length);
         Vector3 randomSpawnerPosition = AllSpawners[RandomSpawnerIndex].position;
 
         GameObject clonedEnemy = Instantiate(enemies[RandomEnemiesIndex], randomSpawnerPosition, transform.rotation);
