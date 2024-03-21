@@ -21,7 +21,7 @@ we used assets from itch.io from: https://blackthornprod-games.itch.io/top-down-
 ![image](https://github.com/IDontCaramel/Floral-fury/assets/120132450/82124767-bfee-4cbe-afa2-ea7bc1792d16)
 Start menu
 
-![image](https://github.com/IDontCaramel/Floral-fury/assets/120132450/a3648d6a-512e-4bde-93b1-be54e07103c1)
+<img width="1180" alt="image" src="https://github.com/IDontCaramel/Floral-fury/assets/120132450/ec51d285-5c03-47af-b562-4f5e940f9431">
 Gameplay
 
 
