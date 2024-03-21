@@ -91,17 +91,27 @@ public class EnemySpawnerScript : MonoBehaviour
 
     public void waveManager()
     {
-        wave += 1;
-        if(EnemiesThatSpawnedLastTIme < maxenemiesthatCanSpawn)
+        if (numberOfEnemiesAlive <= 100)
         {
-            EnemiesToSpawn = EnemiesThatSpawnedLastTIme + enemiestoSpawnMultiplier;
+            wave += 1;
+            if (EnemiesThatSpawnedLastTIme < maxenemiesthatCanSpawn)
+            {
+                EnemiesToSpawn = EnemiesThatSpawnedLastTIme + enemiestoSpawnMultiplier;
+            }
+            else
+            {
+                EnemiesToSpawn = maxenemiesthatCanSpawn;
+            }
+            EnemiesThatSpawnedLastTIme = EnemiesToSpawn;
+            Debug.Log(EnemiesToSpawn);
         }
+
         else
         {
-            EnemiesToSpawn = maxenemiesthatCanSpawn;
+            return;
         }
-        EnemiesThatSpawnedLastTIme = EnemiesToSpawn;
-        Debug.Log(EnemiesToSpawn);
+
+
 
     }
 
