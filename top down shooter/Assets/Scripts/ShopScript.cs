@@ -14,9 +14,9 @@ public class ShopScript : MonoBehaviour
     Vector3 bigScale = new Vector3(20.5698f, 42.43313f, 58.69231f);
     Vector3 smallScale = new Vector3(18.5698f, 40.43313f, 58.69231f);
 
-    private int Item1Price = 2000;
-    private int Item2Price = 3500;
-    private int Item3Price = 1500;
+    private int Item1Price = 750;
+    private int Item2Price = 1000;
+    private int Item3Price = 500;
 
     public GameObject Sold1;
     public GameObject Sold2;
