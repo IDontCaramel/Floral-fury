@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullet
+  - StartButton
+  - ExitButton
+  - Enemy
+  - spikeboy
+  - spawner
+  - Item1
+  - Item2
+  - Item3
+  - Cursor
+  - HelpButton
+  - Barrier
   layers:
   - Default
   - TransparentFX
@@ -11,12 +23,12 @@ TagManager:
   - 
   - Water
   - UI
+  - Button
+  - cursor
+  - DontFuckWithThis
+  - EnemyCanSee
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - BOOLET
   - 
   - 
   - 
